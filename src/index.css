@@ -1,0 +1,17 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "Atkinson Hyperlegible", system-ui, sans-serif; }
+button { font-family: inherit; cursor: pointer; }
+textarea { font-family: inherit; }
+textarea:focus-visible, button:focus-visible {
+  outline: 3px solid #C98A5E;
+  outline-offset: 2px;
+}
+.fade { animation: fade 0.45s ease both; }
+@keyframes fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade { animation: none; }
+}
