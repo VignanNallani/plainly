@@ -15,3 +15,6 @@ textarea:focus-visible, button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .fade { animation: none; }
 }
+.thinking { animation: pulse 1.6s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.65; } }
+@media (prefers-reduced-motion: reduce) { .thinking { animation: none; } }

@@ -99,13 +99,17 @@ export default function App() {
   const fs = (px) => ({ fontSize: px * scale });
 
   return (
-    <div style={{ minHeight: "100vh", background: C.mist, color: C.ink }}>
+    <div style={{ minHeight: "100vh", background: `radial-gradient(1200px 600px at 50% -10%, #EFF3EF 0%, ${C.mist} 62%)`, color: C.ink }}>
       <div style={{ maxWidth: 680, margin: "0 auto", padding: "32px 20px 80px" }}>
         <header style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 16, marginBottom: 8 }}>
           <div>
-            <h1 style={{ fontFamily: "Lexend, sans-serif", fontWeight: 600, margin: 0, letterSpacing: "-0.5px", ...fs(34) }}>
-              Plainly
-            </h1>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true" style={{ flexShrink: 0 }}>
+                <rect width="32" height="32" rx="9" fill={C.sage} />
+                <path d="M9 11h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-7l-4 3v-3H9a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2z" fill="#FCFCFA" />
+              </svg>
+              <h1 style={{ fontFamily: "Lexend, sans-serif", fontWeight: 600, margin: 0, letterSpacing: "-0.5px", ...fs(34) }}>Plainly</h1>
+            </div>
             <p style={{ color: C.inkSoft, margin: "6px 0 0", lineHeight: 1.5, ...fs(16) }}>
               A calm space to understand messages and say what you mean.
             </p>
@@ -171,7 +175,7 @@ export default function App() {
             ))}
           </div>
 
-          <button onClick={run} disabled={loading}
+          <button onClick={run} disabled={loading} className={loading ? "thinking" : undefined}
             style={{
               marginTop: 16, width: "100%", border: "none", borderRadius: 12, padding: "14px",
               background: loading ? C.inkSoft : accent, color: "#fff", fontWeight: 700, ...fs(16),
